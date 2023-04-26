@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -32,7 +33,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(v, char *);
-					len = get_size(str);
+					len = get_LenOfString(str);
 					for (j = 0; j < len; j++)
 					{
 						buf[0] = str[j];

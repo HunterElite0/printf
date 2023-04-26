@@ -2,7 +2,7 @@
 #define MAIN_H
 
 int _printf(const char *format, ...);
-int get_size(const char *str);
+int get_LenOfString(const char *str);
 
 
 #endif

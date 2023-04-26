@@ -6,7 +6,7 @@
  *
  * Return: int
 */
-int get_size(const char *str)
+int get_LenOfString(const char *str)
 {
 	int i = 0;
 
