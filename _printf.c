@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, j = 0;
 	int len = 0;
+	int size = 0;
 	char buf[1024];
 	char *str;
 	va_list v;
@@ -29,6 +30,7 @@ int _printf(const char *format, ...)
 				case 'c':
 					buf[0] = va_arg(v, int);
 					write(1, buf, 1);
+					size++;
 					i += 2;
 					break;
 				case 's':
@@ -38,6 +40,7 @@ int _printf(const char *format, ...)
 					{
 						buf[0] = str[j];
 						write(1, buf, 1);
+						size++;
 					}
 					i += 2;
 					break;
@@ -45,10 +48,11 @@ int _printf(const char *format, ...)
 			}
 			buf[0] = format[i];
 			write(1, buf, 1);
+			size++;
 			i++;
 		}
 	}
 	printf("\n");
 	va_end(v);
-	return (len);
+	return (size);
 }
